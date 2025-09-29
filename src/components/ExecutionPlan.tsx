@@ -142,7 +142,10 @@ const ExecutionPlan = () => {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-4">
                 <div className="bg-white/20 p-3 rounded-xl">
-                  <phases[activePhase].icon className="w-8 h-8" />
+                  {(() => {
+                    const Icon = phases[activePhase].icon;
+                    return <Icon className="w-8 h-8" />;
+                  })()}
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold">{phases[activePhase].title}</h3>
